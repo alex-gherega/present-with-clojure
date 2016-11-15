@@ -1,2 +1,2 @@
 (ns adzerk.boot-reload (:require [adzerk.boot-reload.client :as client] peekatclojure.app))
-(client/connect "ws://localhost:40490" {:ws-host nil, :asset-host nil, :on-jsload (fn* [] (peekatclojure.app/init))})
+(client/connect "ws://localhost:36587" {:ws-host nil, :asset-host nil, :on-jsload (fn* [] (peekatclojure.app/init))})
