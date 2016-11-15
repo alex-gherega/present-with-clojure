@@ -54,11 +54,19 @@
                         :position "relative"
                         :width "100%"}}
       [atom-input z-var]
-      [:button {:style {:bottom 10
-                        :right 10
-                        :position "absolute"}
-                :on-click #(eval-request z-var)
-                }  "eval"]]]))
+      [:div {:class "pointer"
+             :style {:bottom 10
+                     :right 10
+                     :position "absolute"
+                     :padding 5
+                     :border "2px solid #00ccff"
+                     ;:background "cyan"
+                     :color "teal"
+                     :border-radius "5px"
+                     :cursor "pointer"}
+             :on-click #(eval-request z-var)
+
+             } "eval"]]]))
 
 
 (defn do-output [text]
@@ -68,7 +76,18 @@
 (defn main []
   [:div
    [do-editor text-code]
-   [do-output text-out]])
+   [do-output text-out]
+   [:div {:id "footer"
+             :style {:position "absolute"
+                     :margin-top "100px"
+                     }
+             }
+    [:font {:size "2"}
+     "by" [:a {:href "https://ro.linkedin.com/in/alexandru-gherega-73340719"} "Alex Gherega"] " "
+     [:a {:href "http://www.icslab.eu"}
+      [:img {:src "public/logo-1.png" :height 40 :width 40
+             :style {:vertical-align "middle"}}]]]
+    ]])
 
 
 (defn init []
