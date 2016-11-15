@@ -1,0 +1,3 @@
+{:require  [peekatclojure.app]
+ :init-fns [peekatclojure.app/init]
+ :compiler-options {:asset-path "js/app.out"}}
